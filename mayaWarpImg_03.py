@@ -315,7 +315,7 @@ class mayaWarpImg :
 					if e.errno != errno.EEXIST:
 						raise
 				else:
-					(u'目录已不存在')
+					print (u'目录已不存在')
 					self.exportDir = exportDir + r'/'
 			else :
 				self.exportDir = exportDir + r'/'
