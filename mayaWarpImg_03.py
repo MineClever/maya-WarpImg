@@ -432,7 +432,7 @@ class mayaWarpImg :
 		shaderType=sgInfo[i][0].connections()
 		shaderNodes = []
 		#初始化一个gtype 的字段.用来存储shader 的类型
-		gtype='lambert'
+		gtype=''
 		for i in shaderType:#判断shader类型
 			if type(i) is pm.nodetypes.Phong:
 				gtype = 'phong'
@@ -442,7 +442,9 @@ class mayaWarpImg :
 				gtype = 'phongE'
 			if type(i) is pm.nodetypes.Blinn:
 				gtype = 'blinn'
-		print (u'找到 %s'%gtype)
+			else :
+				gtype=''
+		print (u'找到Shader类型为 %s'%gtype)
 		if gtype == '' :#如果没有改写shaderType,那么即为不支持的类型
 			raise ShaderTypeError
 		#获取materialInfo 节点上的shader
