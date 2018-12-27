@@ -442,8 +442,6 @@ class mayaWarpImg :
 				gtype = 'phongE'
 			if type(i) is pm.nodetypes.Blinn:
 				gtype = 'blinn'
-			else :
-				gtype=''
 		print (u'找到Shader类型为 %s'%gtype)
 		if gtype == '' :#如果没有改写shaderType,那么即为不支持的类型
 			raise ShaderTypeError
